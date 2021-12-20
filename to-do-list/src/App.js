@@ -1,10 +1,12 @@
 import './App.css';
+import CreateNote from './components/CreateNote';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Header/>
+      <CreateNote/>
     </div>
   );
 }
