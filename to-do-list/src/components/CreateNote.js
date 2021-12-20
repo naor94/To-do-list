@@ -32,6 +32,15 @@ function CreateNote(){
 
 
             </form> 
+            <div className="mission-form">
+                <h2>My tasks</h2>
+
+            </div>
+
+            <div className="accomplished-mission-form">
+                <h2>Accomplished tasks</h2>
+
+            </div>
         </div>
 
     )

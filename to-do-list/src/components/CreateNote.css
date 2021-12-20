@@ -8,6 +8,49 @@ form.create-note{
     box-shadow: 0 1px 5px rgb(138,137,137);
 }
 
+.mission-form{
+    position: relative;
+    right: 500px;
+    width: 350px;
+    height: 450px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138,137,137);
+
+}
+
+.accomplished-mission-form{
+    position: absolute;
+    top: 285px;
+    right: 150px;
+    width: 350px;
+    height: 450px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138,137,137);
+}
+
+
+.accomplished-mission-form h2{
+    text-align: center;
+    
+}
+.mission-form{
+    text-align: center;
+}
+.task-row{
+    position: relative;
+    width: 300px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138,137,137);
+}
 form.create-note input, 
 form.create-note textarea{
     width:100%;
