@@ -28,9 +28,6 @@ function CreateNote(){
             return [...prevTasks,note]
         });
 
-
-
-
     }
 
     const deleteNote=(id)=>{
@@ -38,6 +35,15 @@ function CreateNote(){
             return prevNotes.filter((noteItem, index)=>{
                 return index!==id;
             });
+        });
+
+    }
+
+    const addToAccomplish=(text)=>{
+        
+        const newNote={title:"" ,content: text}
+        setAccomplishedTasks(prevTasks=>{
+            return [...prevTasks,newNote]
         });
 
     }
@@ -75,6 +81,7 @@ function CreateNote(){
                 index={index} 
                 text ={task.content}
                 onDelete={deleteNote}
+                onAddToAccomplishList={addToAccomplish}
                 
                 />
 

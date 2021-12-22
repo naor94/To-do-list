@@ -8,12 +8,13 @@ import Fab from '@mui/material/Fab';
 const Task=(props)=>{
 
     const doneTask=()=>{
+        deleteTask()
+        props.onAddToAccomplishList(props.text)
 
     }
 
     const deleteTask=()=>{
         props.onDelete(props.index)
-
     }
 
 
