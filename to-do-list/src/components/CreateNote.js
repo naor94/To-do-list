@@ -1,16 +1,49 @@
-import React from "react";
+import React, { useState } from 'react';
 import './CreateNote.css';
 
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import Task from './Task';
 
 
 function CreateNote(){
 
-    const subbmitNote= ()=>{
-        console.log("fsdgsf")
+    const [tasks, setTasks] = useState([]);
+    const [accomplishedTasks, setAccomplishedTasks] = useState([]);
+    const [note, setNote] = useState({title:"", content:""});
+
+    const handleChange=(e)=>{
+        const {name,value}=e.target;
+        setNote(prevNote=>{
+            return {
+                ...prevNote,
+                [name]:value
+            }
+        })
 
     }
+
+    const subbmitNote= (e)=>{
+        setTasks(prevTasks=>{
+            return [...prevTasks,note]
+        });
+
+
+
+
+    }
+
+    const deleteNote=(id)=>{
+        setTasks(prevNotes=>{
+            return prevNotes.filter((noteItem, index)=>{
+                return index!==id;
+            });
+        });
+
+    }
+
+
+
     return(
         <div> 
             <form className="create-note">
@@ -22,6 +55,7 @@ function CreateNote(){
                  name="content"
                  rows="3"
                  placeholder="Take a note..."
+                 onChange={handleChange}
                  />
                  <Fab onClick={subbmitNote}>
                  <AddIcon/>
@@ -32,13 +66,32 @@ function CreateNote(){
 
 
             </form> 
+             <h1 className="m-task">My Tasks:{tasks.length}</h1>
+
             <div className="mission-form">
                 <h2>My tasks</h2>
+                {tasks.map((task,index )=>
+                <Task 
+                index={index} 
+                text ={task.content}
+                onDelete={deleteNote}
+                
+                />
+
+                )}
+               
+
 
             </div>
 
+
             <div className="accomplished-mission-form">
                 <h2>Accomplished tasks</h2>
+                {accomplishedTasks.map((task=>
+                <Task text ={task.content}/>
+
+                ))}
+                
 
             </div>
         </div>

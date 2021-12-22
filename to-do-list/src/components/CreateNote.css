@@ -1,3 +1,12 @@
+.m-task{
+position:absolute;
+left:180px;
+}
+
+.a-task{
+    position:absolute;
+    top:15px;
+}
 form.create-note{
     position: relative;
     width: 480px;
@@ -12,7 +21,7 @@ form.create-note{
     position: relative;
     right: 500px;
     width: 350px;
-    height: 450px;
+    min-height: 450px;
     margin: 30px auto 20px auto;
     background: #fff;
     padding: 15px;
@@ -24,9 +33,9 @@ form.create-note{
 .accomplished-mission-form{
     position: absolute;
     top: 285px;
-    right: 150px;
-    width: 350px;
-    height: 450px;
+    right: 70px;
+    min-width: 350px;
+    min-height: 450px;
     margin: 30px auto 20px auto;
     background: #fff;
     padding: 15px;
@@ -60,6 +69,7 @@ form.create-note textarea{
     font-size: 1.2em;
     font-family: inherit;
     resize: none;
+    display: inline;
 }
 form.create-note button{
     position: absolute;

@@ -1,0 +1,46 @@
+
+.task{
+    position: relative;
+    min-width: 300px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138,137,137);
+
+}
+
+
+.done-task{
+    display:inline-block;
+    margin: 5px;
+}
+
+.done-task>button{
+    background: greenyellow;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    outline: none;
+    
+}
+.delete-task{
+    display: inline-block;
+}
+.delete-task>button{
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    outline: none;
+
+    
+}
