@@ -48,8 +48,12 @@ form.create-note{
     text-align: center;
     
 }
-.mission-form{
+.mission-form {
     text-align: center;
+}
+.accomplished-mission-form{
+    text-align: center;
+
 }
 .task-row{
     position: relative;

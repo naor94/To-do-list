@@ -40,14 +40,21 @@ function CreateNote(){
     }
 
     const addToAccomplish=(text)=>{
-        
+
         const newNote={title:"" ,content: text}
         setAccomplishedTasks(prevTasks=>{
             return [...prevTasks,newNote]
         });
 
     }
+     const deleteCompletedNote=(id)=>{
+        setAccomplishedTasks(prevNotes=>{
+            return prevNotes.filter((noteItem, index)=>{
+                return index!==id;
+            });
+        });
 
+     }
 
 
     return(
@@ -77,7 +84,8 @@ function CreateNote(){
             <div className="mission-form">
                 <h2>My tasks</h2>
                 {tasks.map((task,index )=>
-                <Task 
+                <Task
+                type="Incomplete task"
                 index={index} 
                 text ={task.content}
                 onDelete={deleteNote}
@@ -94,10 +102,16 @@ function CreateNote(){
 
             <div className="accomplished-mission-form">
                 <h2>Accomplished tasks</h2>
-                {accomplishedTasks.map((task=>
-                <Task text ={task.content}/>
+                {accomplishedTasks.map((task,index)=>
+                <Task
+                index={index} 
+                text ={task.content}
+                type="complete task"
+                onDeleteCompletedTask={deleteCompletedNote}
 
-                ))}
+                />
+
+                )}
                 
 
             </div>

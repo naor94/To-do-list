@@ -17,6 +17,10 @@ const Task=(props)=>{
         props.onDelete(props.index)
     }
 
+    const deleteCompletedTask=()=>{
+        props.onDeleteCompletedTask(props.index)
+    }
+
 
 
 return(
@@ -25,15 +29,16 @@ return(
         {props.text}  
         
         <div className="done-task">
-        <Fab onClick={doneTask}>
-        <CheckCircleOutlineIcon/>
-        </Fab> 
+        
+        {props.type === "Incomplete task"?<Fab onClick={doneTask}> <CheckCircleOutlineIcon/></Fab>: <></>}
+    
         </div>
         <div className="delete-task">
 
-        <Fab onClick={deleteTask}>
-        <DeleteIcon/>   
-        </Fab>
+        {props.type === "Incomplete task"?<Fab onClick={deleteTask}>
+        <DeleteIcon/> </Fab> : <Fab onClick={deleteCompletedTask}> <DeleteIcon/>  </Fab> }
+
+        
         </div>
 </div>
 )
