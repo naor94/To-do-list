@@ -99,6 +99,7 @@ function CreateNote(){
 
             </div>
 
+            <h1 className="a-task">My completed Tasks:{accomplishedTasks.length}</h1>
 
             <div className="accomplished-mission-form">
                 <h2>Accomplished tasks</h2>
